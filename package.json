@@ -1,0 +1,24 @@
+{
+  "name": "assignment-postaway",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucifer-art/nodeJs-postaway.git"
+  },
+  "author": "Shivang Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucifer-art/nodeJs-postaway/issues"
+  },
+  "homepage": "https://github.com/lucifer-art/nodeJs-postaway#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
