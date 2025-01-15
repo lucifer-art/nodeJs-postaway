@@ -1,0 +1,91 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Postaway - Social Networking Platform - APIs",
+        "version": "1.0.0",
+        "description": "Postaway is a social networking platform designed for user engagement with features such as creating posts, liking, and commenting. This document provides an overview of the application’s API structure, functionalities, dependencies, and code organization."
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3200"
+        }
+    ],
+    "components": {
+        "securitySchemes": {
+            "JWT": {
+                "in": "header",
+                "name": "Authorization",
+                "type": "apiKey"
+            }
+        }
+    },
+    "paths": {
+        "/api/signup": {
+            "post": {
+                "tags": ["Users"],
+                "summary": "Signup",
+                "description": "Add a user to the system",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad Request"
+                    }
+                }
+            }
+        },
+        "/api/signin": {
+            "post": {
+                "tags": ["Users"],
+                "summary": "Login",
+                "description": "User login to get the token",
+                "requestBody":{
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Incorrect Credentials"
+                    }
+                }
+            }
+        }
+    }
+}
